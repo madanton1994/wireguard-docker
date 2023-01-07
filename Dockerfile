@@ -1,7 +1,7 @@
-FROM debian:buster
+FROM debian:11.6-slim
 
-RUN echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list && \
- printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' > /etc/apt/preferences.d/limit-unstable
+# RUN echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list && \
+#  printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' > /etc/apt/preferences.d/limit-unstable
 
 RUN apt update && \
  apt install -y --no-install-recommends wireguard-tools iptables nano net-tools && \
