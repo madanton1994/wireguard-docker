@@ -4,7 +4,7 @@ FROM ubuntu:lunar
 #  printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' > /etc/apt/preferences.d/limit-unstable
 
 RUN apt update && \
- apt install -y --no-install-recommends wireguard-tools iptables nano net-tools && \
+ apt install -y --no-install-recommends wireguard-tools iptables nano net-tools iproute2 && \
  apt clean
 
 WORKDIR /scripts
